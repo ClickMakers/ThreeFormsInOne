@@ -9,7 +9,7 @@ require('PlayerUpload.php');
     <label for="inputName" class="col-form-label">Your Name</label>
   </div>
   <div class="col-auto">
-    <input type="text" id="inputName" placeholder="Your Name" class="form-control" aria-describedby="NameHelpInline">
+    <input type="text" id="inputName" name="PLAYERName" placeholder="Your Name" class="form-control" aria-describedby="NameHelpInline">
   </div>
   <div class="col-auto">
     <span id="NameHelpInline" class="form-text">
@@ -85,7 +85,7 @@ require('PlayerUpload.php');
             <label for="inputName" class="col-form-label">Adhaar Card</label>
           </div>
           <div class="col-auto">
-            <input type="number" id="AdhaarCard" name="AdhaarCard" placeholder="Adhaar Card" class="form-control" aria-describedby="NameHelpInline">
+            <input type="number" id="AdhaarCard" name="PLAYERAadhaarCard" placeholder="Adhaar Card" class="form-control" aria-describedby="NameHelpInline">
           </div>
     </div>
     <div class="col">

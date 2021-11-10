@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   
 
    
-    $name = $_POST["Name"];
+    $name = $_POST["PLAYERName"];
     $_SESSION['Name'] = $name;
     
    
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $MotherName = $_POST["MotherName"];
     $_SESSION['MotherName'] = $MotherName;
 
-    $Address = $_POST["Address"];
+    $Address = $_POST["HomeAddress"];
     $_SESSION['Address'] = $Address;
     
     
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$_SESSION['SelectionBased'] = $SelectionBased;
   
 
-	$AadhaarCard = $_POST["AadhaarCard"];
+	$AadhaarCard = $_POST["PLAYERAadhaarCard"];
 	$_SESSION['AadhaarCard'] = $AadhaarCard;
 
 	$CoachName = $_POST["CoachName"];
