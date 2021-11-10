@@ -4,11 +4,10 @@ require('Db.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	
-    $PostName = $_POST["form-select"];
-    $_SESSION['PostName'] = $PostName;
-   
-    if($PostName == "Player"){
-  
+  $PostName = $_POST["form-select"];
+  $_SESSION['PostName'] = $PostName;
+ 
+  if($PostName == "Membership"){
 
     $CRandom = rand(1,999999999);
 
@@ -37,17 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   
 
    
+    
     $name = $_POST["Name"];
     $_SESSION['Name'] = $name;
     
    
     
-    $fatherName = $_POST["fatherName"];
-    $_SESSION['fatherName'] = $fatherName;
-
-    $MotherName = $_POST["MotherName"];
-    $_SESSION['MotherName'] = $MotherName;
-
     $Address = $_POST["Address"];
     $_SESSION['Address'] = $Address;
     
@@ -60,27 +54,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['DOB'] = $DOB;
     
     
-    $State = $_POST["State"];
+    $State = $_POST["MYState"];
     $_SESSION['State'] = $State;
     
 	$PinCode = $_POST["PinCode"];
     $_SESSION['PinCode'] = $PinCode;
     	
-	$SelectionBased = $_POST["SelectionBased"];
-	$_SESSION['SelectionBased'] = $SelectionBased;
   
-
-	$AadhaarCard = $_POST["AadhaarCard"];
-	$_SESSION['AadhaarCard'] = $AadhaarCard;
-
-	$CoachName = $_POST["CoachName"];
-	$_SESSION['CoachName'] = $CoachName;
+	$Qualification = $_POST["Qualification"];
+	$_SESSION['Qualification'] = $Qualification;
 
 	$SportsAchievements = $_POST["SportsAchievements"];
 	$_SESSION['SportsAchievements'] = $SportsAchievements;
 
 
-    $PhoneNumber = $_POST["PhoneNumber"];
+    $PhoneNumber = $_POST["MYPhoneNumber"];
     $_SESSION['PhoneNumber'] = $PhoneNumber;
     
     $EMAIL = $_POST["EMAIL"];
@@ -98,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $TransId = "0123";
 
 //Sql query to be executed
-  $sql = "INSERT INTO `affiliatondatabase` (`id`, `Name`, `PostName`, `FatherName`,`MotherName`,`CoachName`, `SelectionBased`,  `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`) VALUES (NULL, '$name','$PostName', '$fatherName', '$MotherName','$CoachName', '$SelectionBased', '$Address', '$City', '$State', '$PinCode', 'Profession', 'inactive', '$AadhaarCard', 'Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId')";
+  $sql = "INSERT INTO `affiliatondatabase` (`id`, `PostName`, `Name`, `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`) VALUES (NULL, '$PostName', '$name', '$Address', '$City', '$State', '$PinCode', 'Profession', 'inactive', 'AadhaarCard', '$Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId')";
   $result = mysqli_query($conn, $sql);
 
    
@@ -112,4 +100,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   }  
 }
 }
+
 ?>

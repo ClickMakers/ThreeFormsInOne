@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['PinCode'] = $PinCode;
     	
 	$Profession = $_POST["Profession"];
-	$_SESSION['email'] = $Profession;
+	$_SESSION['Profession'] = $Profession;
   
 
 	$AadhaarCard = $_POST["AadhaarCard"];
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $TransId = "0123";
 
 //Sql query to be executed
-  $sql = "INSERT INTO `affiliatondatabase` (`id`, `PostName`, `Name`, `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`) VALUES (NULL, '$name', '$PostName',  '$Address', '$City', '$State', '$PinCode', '$Profession', 'inactive', '$AadhaarCard', '$Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId')";
+  $sql = "INSERT INTO `affiliatondatabase` (`id`, `PostName`, `Name`, `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`) VALUES (NULL, '$PostName', '$name', '$Address', '$City', '$State', '$PinCode', '$Profession', 'inactive', '$AadhaarCard', '$Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId')";
   $result = mysqli_query($conn, $sql);
 
    

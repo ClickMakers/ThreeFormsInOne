@@ -209,6 +209,9 @@ require('Player.php');
 ?>
   </div>
   
+</form>
+
+</div>
 
   </body>
 </html>

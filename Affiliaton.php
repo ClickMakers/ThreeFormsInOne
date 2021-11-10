@@ -163,9 +163,9 @@ require('AffiliatonUploadDatabase.php');
   </div>
 
   <button type="submit" id="btn" class="btn btn-primary">Submit</button>
-</form>
+<!-- </form>
 
-</div>
+</div> -->
 
 
 

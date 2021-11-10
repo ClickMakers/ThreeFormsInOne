@@ -1,14 +1,15 @@
 
+<?php  
+require('MembershipUploadData.php');
+?>
 
-
-<div class="container my-5"> 
   <div class="row align-items-end">
     <div class="col">
     <div class="col-auto">
     <label for="inputName" class="col-form-label">Name of Candidate</label>
   </div>
   <div class="col-auto">
-    <input type="text" id="inputName" placeholder="Your Name" class="form-control" aria-describedby="NameHelpInline">
+    <input type="text" id="inputName" name="Name" placeholder="Your Name" class="form-control" aria-describedby="NameHelpInline">
   </div>
   <div class="col-auto">
     <span id="NameHelpInline" class="form-text">
@@ -19,8 +20,8 @@
 
     <div class="col d-flex justify-content-center">
     <td class="align-items-end">
-        <a href="" onClick="document.getElementById('uploadImage').click(); return false"><img id="uploadPreview" width="100" height="120" src="https://ruralsportsdevelopmentboard.com/Partitions/IMAGES/no-profile-pic-m.gif" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" /></a><br />
-        <input id="uploadImage" type="file" name="Photograph" onchange="loadFileProfile(event)" hidden>
+        <a href="" onClick="document.getElementById('uploadImageMember').click(); return false"><img id="uploadPreviewMember" width="100" height="120" src="https://ruralsportsdevelopmentboard.com/Partitions/IMAGES/no-profile-pic-m.gif" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" /></a><br />
+        <input id="uploadImageMember" type="file" name="image" onchange="loadFileProfileMember(event)" hidden>
         <div class="col-auto">
             <span id="NameHelpInline" class="form-text">
               Your Profile Picture
@@ -62,7 +63,7 @@
             <label for="inputName" class="col-form-label">State</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="State" placeholder="State" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="MYState" placeholder="State" class="form-control" aria-describedby="NameHelpInline">
           </div>
     </div>
     <div class="col">
@@ -84,7 +85,7 @@
             <label for="inputName" class="col-form-label">Qualification</label>
           </div>
           <div class="col-auto">
-            <input type="number" id="Qualification" name="Qualification" placeholder="Qualification" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="Qualification" name="Qualification" placeholder="Qualification" class="form-control" aria-describedby="NameHelpInline">
           </div>
     </div>
     <div class="col">
@@ -112,7 +113,7 @@
             <label for="inputName" class="col-form-label">Phone Number</label>
           </div>
           <div class="col-auto">
-            <input type="number" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" class="form-control" aria-describedby="NameHelpInline">
+            <input type="number" id="PhoneNumber" name="MYPhoneNumber" placeholder="Phone Number" class="form-control" aria-describedby="NameHelpInline">
           </div>
     </div>
     <div class="col">
@@ -120,7 +121,7 @@
             <label for="inputName" class="col-form-label">E mail</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="Email" name="Email" placeholder="E mail" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="Email" name="EMAIL" placeholder="E mail" class="form-control" aria-describedby="NameHelpInline">
           </div>
     </div>
     <div class="col">
@@ -128,14 +129,13 @@
             <label for="inputName" class="col-form-label">Date of Birth</label>
           </div>
           <div class="col-auto">
-            <input type="date" id="inputName" name="DateOfBirth" placeholder="Coach Name" class="form-control" aria-describedby="NameHelpInline">
+            <input type="date" id="inputName" name="DOB" placeholder="Coach Name" class="form-control" aria-describedby="NameHelpInline">
           </div>
     </div>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
-
-</div>
+ 
 
 
 
@@ -147,8 +147,8 @@
     <script src="js/main.js"></script>
 
     <script>
-  var loadFileProfile = function(event) {
-    var output = document.getElementById('uploadPreview');
+  var loadFileProfileMember = function(event) {
+    var output = document.getElementById('uploadPreviewMember');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = function() {
       URL.revokeObjectURL(output.src) // free memory

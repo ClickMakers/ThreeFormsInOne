@@ -3,7 +3,6 @@
 require('PlayerUpload.php');
 ?>
 
-<div class="container my-5">
   <div class="row align-items-end">
     <div class="col">
     <div class="col-auto">
@@ -21,8 +20,8 @@ require('PlayerUpload.php');
 
     <div class="col d-flex justify-content-center">
     <td class="align-items-end">
-        <a href="" onClick="document.getElementById('uploadImage').click(); return false"><img id="uploadPreview" width="100" height="120" src="https://ruralsportsdevelopmentboard.com/Partitions/IMAGES/no-profile-pic-m.gif" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" /></a><br />
-        <input id="uploadImage" type="file" name="image" onchange="loadFileProfile(event)" hidden>
+        <a href="" onClick="document.getElementById('uploadImagePlayer').click(); return false"><img id="uploadPreviewPlayer" width="100" height="120" src="https://ruralsportsdevelopmentboard.com/Partitions/IMAGES/no-profile-pic-m.gif" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" /></a><br />
+        <input id="uploadImagePlayer" type="file" name="image" onchange="loadFileProfilePlayer(event)" hidden>
         <div class="col-auto">
             <span id="NameHelpInline" class="form-text">
               Your Profile Picture
@@ -64,7 +63,7 @@ require('PlayerUpload.php');
             <label for="inputName" class="col-form-label">Date Of Birth</label>
           </div>
           <div class="col-auto">
-            <input type="date" id="inputName" name="dobName" placeholder="Date Of Birth" class="form-control" aria-describedby="NameHelpInline">
+            <input type="date" id="inputName" name="DOB" placeholder="Date Of Birth" class="form-control" aria-describedby="NameHelpInline">
           </div>
     </div>
     <div class="col">
@@ -137,7 +136,6 @@ require('PlayerUpload.php');
 
   <button type="submit" class="btn btn-primary">Submit</button>
 
-</div>
 
 
 
@@ -149,8 +147,8 @@ require('PlayerUpload.php');
     <script src="js/main.js"></script>
 
     <script>
-  var loadFileProfile = function(event) {
-    var output = document.getElementById('uploadPreview');
+  var loadFileProfilePlayer = function(event) {
+    var output = document.getElementById('uploadPreviewPlayer');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = function() {
       URL.revokeObjectURL(output.src) // free memory
