@@ -70,6 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$_SESSION['SelectionBased'] = $SelectionBased;
   
 
+  $Qualification = $_POST["Qualification"];
+	$_SESSION['Qualification'] = $Qualification;
+
+  $Profession = $_POST["Profession"];
+	$_SESSION['Profession'] = $Profession;
+
 	$AadhaarCard = $_POST["PLAYERAadhaarCard"];
 	$_SESSION['AadhaarCard'] = $AadhaarCard;
 
@@ -98,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $TransId = "0123";
 
 //Sql query to be executed
-  $sql = "INSERT INTO `affiliatondatabase` (`id`, `Name`, `PostName`, `FatherName`,`MotherName`,`CoachName`, `SelectionBased`,  `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`) VALUES (NULL, '$name','$PostName', '$fatherName', '$MotherName','$CoachName', '$SelectionBased', '$Address', '$City', '$State', '$PinCode', 'Profession', 'inactive', '$AadhaarCard', 'Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId')";
+  $sql = "INSERT INTO `affiliatondatabase` (`id`, `Name`, `PostName`, `FatherName`,`MotherName`,`CoachName`, `SelectionBased`,  `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`) VALUES (NULL, '$name','$PostName', '$fatherName', '$MotherName','$CoachName', '$SelectionBased', '$Address', '$City', '$State', '$PinCode', '$Profession', 'inactive', '$AadhaarCard', '$Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId')";
   $result = mysqli_query($conn, $sql);
 
    

@@ -1,6 +1,6 @@
 <?php  
 session_start();
-
+require('PlayerUpload.php');
 $insert = false;
 $update = false;
 $delete = false;
@@ -161,15 +161,11 @@ div {
 
 
       <script>
-        function showDiv(divId, divId2,divId3,divIdfrom,divIdform2, element)
+        function showDiv(divId, divId2, element)
       {
           document.getElementById(divId).style.display = element.value == "Affiliaton" ? 'block' : 'none';
           document.getElementById(divId2).style.display = element.value == "Membership" ? 'block' : 'none';
 
-          document.getElementById(divIdfrom).style.display = element.value == "Affiliaton" ? 'block' : 'none';
-          document.getElementById(divIdform2).style.display = element.value == "Membership" ? 'block' : 'none';
-
-          document.getElementById(divId3).style.display = element.value == "Player" ? 'block' : 'none';
       }
       </script>
 
@@ -180,33 +176,246 @@ div {
     <label for="inputName" class="col-form-label">Apply For</label>
   </div>
 
-  <select id="test" name="form-select" class="form-select"  onchange="showDiv('hidden_div', 'hidden_div2', 'hidden_div3' , 'hidden_divform', 'hidden_div2form' ,this)"> 
+  <select id="test" name="form-select" class="form-select"  onchange="showDiv('hidden_div', 'hidden_div2',this)"> 
     <option selected value="0">Select Any One</option> 
     <option value="Affiliaton">Affiliaton Form</option> 
     <option value="Membership">Membership Form</option>  
     <option value="Player">Player Registration </option> 
 
  </select>
+  </div>
+
+  </div>
+
+  <div >
+ 
+
+  <div class="row align-items-end">
+    <div class="col">
+    <div class="col-auto">
+    <label for="inputName" class="col-form-label">Your Name</label>
+  </div>
+  <div class="col-auto">
+    <input type="text" id="inputName" name="PLAYERName" placeholder="Your Name" class="form-control" aria-describedby="NameHelpInline">
+  </div>
+  <div class="col-auto">
+    <span id="NameHelpInline" class="form-text">
+      Must be 4-20 characters long.
+    </span>
+  </div>
     </div>
 
+    <div class="col d-flex justify-content-center">
+    <td class="align-items-end">
+        <a href="" onClick="document.getElementById('uploadImagePlayer').click(); return false"><img id="uploadPreviewPlayer" width="100" height="120" src="https://ruralsportsdevelopmentboard.com/Partitions/IMAGES/no-profile-pic-m.gif" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" /></a><br />
+        <input id="uploadImagePlayer" type="file" name="image" onchange="loadFileProfilePlayer(event)" hidden>
+        <div class="col-auto">
+            <span id="NameHelpInline" class="form-text">
+              Your Profile Picture
+            </span>
+          </div>
+    </td>
+        
+    </div>
   </div>
 
-  <div id="hidden_divform" style="display: none;">
-    </h1>
-    <?php  
-require('Affiliaton.php');
-?>
+
+
+
+  <div class="row align-items-center my-5">
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Father Name</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="FatherName" name="fatherName" placeholder="Father Name" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Mother Name</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="MotherName" placeholder="Mother Name" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
   </div>
-  <div id="hidden_div2form" style="display: none;">
-    </h1>
-    <?php  
-require('Membership.php');
-?>
+
+
+
+
+  <div class="row align-items-center my-5">
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Date Of Birth</label>
+          </div>
+          <div class="col-auto">
+            <input type="date" id="inputName" name="DOB" placeholder="Date Of Birth" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Selection Based</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="SelectionBased" placeholder="Selection Based" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+  
   </div>
-  <div id="hidden_div3" style="display: none;">
-    <?php  
-require('Player.php');
-?>
+
+
+
+  <div class="row align-items-center my-5">
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Adhaar Card</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="AdhaarCard" name="PLAYERAadhaarCard" placeholder="Adhaar Card" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Home Address</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="HomeAddress" placeholder="Home Address" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    <!-- <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Date Of Birth</label>
+          </div>
+          <div class="col-auto">
+            <input type="date" id="inputName" name="dobName" placeholder="Date Of Birth" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div> -->
+  </div>
+
+
+  <div class="row align-items-center my-5">
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Qualification</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="Qualification" name="Qualification" placeholder="Qualification" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Sports Achievements</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="SportsAchievements" placeholder="Sports Achievements" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+  
+  </div>
+
+  
+  <div class="row align-items-center my-5">
+  <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Profession</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="Profession" placeholder="Profession" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    
+
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Coach Name</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="CoachName" placeholder="Coach Name" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="row align-items-center my-5">
+  <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Pin Code</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="PinCode" placeholder="Pin Code" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    
+
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">City</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="City" placeholder="City" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    
+  </div>
+
+
+
+
+
+  <div class="row align-items-center my-5">
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">Phone Number</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">State</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputName" name="State" placeholder="State Name" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    <div class="col">
+        <div class="col-auto">
+            <label for="inputName" class="col-form-label">E mail</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="Email" name="EMAIL" placeholder="E mail" class="form-control" aria-describedby="NameHelpInline">
+          </div>
+    </div>
+    
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+
+
+
+    <!-- Your content goes here -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+  var loadFileProfilePlayer = function(event) {
+    var output = document.getElementById('uploadPreviewPlayer');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
+
+
+
   </div>
   
 </form>
