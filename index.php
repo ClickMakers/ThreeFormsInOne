@@ -17,8 +17,8 @@ $fail = false;
     <link rel="stylesheet" href="css/style.css" />
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-
+ 
+ 
   </head>
 
 
@@ -176,7 +176,7 @@ div {
     <label for="inputName" class="col-form-label">Apply For</label>
   </div>
 
-  <select id="test" name="form-select" class="form-select"  onchange="showDiv('hidden_div', 'hidden_div2',this)"> 
+  <select id="test" name="form-select" class="form-select" onchange="showDiv('hidden_div', 'hidden_div2',this)"> 
     <option selected value="0">Select Any One</option> 
     <option value="Affiliaton">Affiliaton Form</option> 
     <option value="Membership">Membership Form</option>  
@@ -196,7 +196,7 @@ div {
     <label for="inputName" class="col-form-label">Your Name</label>
   </div>
   <div class="col-auto">
-    <input type="text" id="inputName" name="PLAYERName" placeholder="Your Name" class="form-control" aria-describedby="NameHelpInline">
+    <input type="text" id="inputName" name="PLAYERName" placeholder="Your Name" class="form-control" aria-describedby="NameHelpInline" required>
   </div>
   <div class="col-auto">
     <span id="NameHelpInline" class="form-text">
@@ -208,7 +208,7 @@ div {
     <div class="col d-flex justify-content-center">
     <td class="align-items-end">
         <a href="" onClick="document.getElementById('uploadImagePlayer').click(); return false"><img id="uploadPreviewPlayer" width="100" height="120" src="https://ruralsportsdevelopmentboard.com/Partitions/IMAGES/no-profile-pic-m.gif" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" /></a><br />
-        <input id="uploadImagePlayer" type="file" name="image" onchange="loadFileProfilePlayer(event)" hidden>
+        <input id="uploadImagePlayer" type="file" name="image" onchange="loadFileProfilePlayer(event)" hidden required>
         <div class="col-auto">
             <span id="NameHelpInline" class="form-text">
               Your Profile Picture
@@ -228,7 +228,7 @@ div {
             <label for="inputName" class="col-form-label">Father Name</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="FatherName" name="fatherName" placeholder="Father Name" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="FatherName" name="fatherName" placeholder="Father Name" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     <div class="col">
@@ -236,7 +236,7 @@ div {
             <label for="inputName" class="col-form-label">Mother Name</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="MotherName" placeholder="Mother Name" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="MotherName" placeholder="Mother Name" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
   </div>
@@ -250,7 +250,7 @@ div {
             <label for="inputName" class="col-form-label">Date Of Birth</label>
           </div>
           <div class="col-auto">
-            <input type="date" id="inputName" name="DOB" placeholder="Date Of Birth" class="form-control" aria-describedby="NameHelpInline">
+            <input type="date" id="inputName" name="DOB" placeholder="Date Of Birth" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     <div class="col">
@@ -258,7 +258,7 @@ div {
             <label for="inputName" class="col-form-label">Selection Based</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="SelectionBased" placeholder="Selection Based" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="SelectionBased" placeholder="Selection Based" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
   
@@ -272,7 +272,7 @@ div {
             <label for="inputName" class="col-form-label">Adhaar Card</label>
           </div>
           <div class="col-auto">
-            <input type="number" id="AdhaarCard" name="PLAYERAadhaarCard" placeholder="Adhaar Card" class="form-control" aria-describedby="NameHelpInline">
+            <input type="number" id="AdhaarCard" name="PLAYERAadhaarCard" placeholder="Adhaar Card" class="form-control" aria-describedby="NameHelpInline" required>
           </div>
     </div>
     <div class="col">
@@ -280,7 +280,7 @@ div {
             <label for="inputName" class="col-form-label">Home Address</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="HomeAddress" placeholder="Home Address" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="HomeAddress" placeholder="Home Address" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     <!-- <div class="col">
@@ -300,7 +300,7 @@ div {
             <label for="inputName" class="col-form-label">Qualification</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="Qualification" name="Qualification" placeholder="Qualification" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="Qualification" name="Qualification" placeholder="Qualification" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     <div class="col">
@@ -308,7 +308,7 @@ div {
             <label for="inputName" class="col-form-label">Sports Achievements</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="SportsAchievements" placeholder="Sports Achievements" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="SportsAchievements" placeholder="Sports Achievements" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
   
@@ -321,7 +321,7 @@ div {
             <label for="inputName" class="col-form-label">Profession</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="Profession" placeholder="Profession" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="Profession" placeholder="Profession" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     
@@ -331,7 +331,7 @@ div {
             <label for="inputName" class="col-form-label">Coach Name</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="CoachName" placeholder="Coach Name" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="CoachName" placeholder="Coach Name" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     
@@ -344,7 +344,7 @@ div {
             <label for="inputName" class="col-form-label">Pin Code</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="PinCode" placeholder="Pin Code" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="PinCode" placeholder="Pin Code" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     
@@ -354,7 +354,7 @@ div {
             <label for="inputName" class="col-form-label">City</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="City" placeholder="City" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="City" placeholder="City" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     
@@ -370,7 +370,7 @@ div {
             <label for="inputName" class="col-form-label">Phone Number</label>
           </div>
           <div class="col-auto">
-            <input type="number" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" class="form-control" aria-describedby="NameHelpInline">
+            <input type="number" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     <div class="col">
@@ -378,7 +378,7 @@ div {
             <label for="inputName" class="col-form-label">State</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="inputName" name="State" placeholder="State Name" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="inputName" name="State" placeholder="State Name" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     <div class="col">
@@ -386,7 +386,7 @@ div {
             <label for="inputName" class="col-form-label">E mail</label>
           </div>
           <div class="col-auto">
-            <input type="text" id="Email" name="EMAIL" placeholder="E mail" class="form-control" aria-describedby="NameHelpInline">
+            <input type="text" id="Email" name="EMAIL" placeholder="E mail" class="form-control" aria-describedby="NameHelpInline"required>
           </div>
     </div>
     

@@ -6,9 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	
     $PostName = $_POST["form-select"];
     $_SESSION['PostName'] = $PostName;
-   
-    if($PostName == "Player"){
-  
+     
 
     $CRandom = rand(1,999999999);
 
@@ -94,8 +92,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     $DOB = $_POST["DOB"];
     $_SESSION['DOB'] = $DOB;
-   
-    
+  
+
+    $Affiliatonfees = 7100;
+    $Membershipfees = 5100;
+    $Playerfees = 1200;
+    $fees=0;
+    if($PostName == "Affiliaton"){
+      $fees = $Affiliatonfees;
+    }
+    if($PostName == "Membership"){
+      $fees = $Membershipfees;
+    }
+    if($PostName == "Player"){
+      $fees = $Playerfees;
+    }
+
+
     	
     $image =  "https://youthruralgamesindia.com/Form/Files/".$YourPic01 ; //$_POST["RegNo"];
     $_SESSION['image'] = $image;
@@ -104,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $TransId = "0123";
 
 //Sql query to be executed
-  $sql = "INSERT INTO `affiliatondatabase` (`id`, `Name`, `PostName`, `FatherName`,`MotherName`,`CoachName`, `SelectionBased`,  `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`) VALUES (NULL, '$name','$PostName', '$fatherName', '$MotherName','$CoachName', '$SelectionBased', '$Address', '$City', '$State', '$PinCode', '$Profession', 'inactive', '$AadhaarCard', '$Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId')";
+  $sql = "INSERT INTO `affiliatondatabase` (`id`, `Name`, `PostName`, `FatherName`,`MotherName`,`CoachName`, `SelectionBased`,  `address`, `City`, `State`, `PinCode`, `Profession`, `Status`, `AadhaarCard`, `Qualification`, `SportsAchievements`, `PhoneNumber`, `EMAIL`, `DOB`, `Picture`, `Payment`, `TransId`, `PaymentPrice`) VALUES (NULL, '$name','$PostName', '$fatherName', '$MotherName','$CoachName', '$SelectionBased', '$Address', '$City', '$State', '$PinCode', '$Profession', 'inactive', '$AadhaarCard', '$Qualification', '$SportsAchievements', '$PhoneNumber', '$EMAIL', '$DOB', '$image', '$Payment', '$TransId', '$fees')";
   $result = mysqli_query($conn, $sql);
 
    
@@ -116,6 +129,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
        $fail = true;
       
   }  
-}
 }
 ?>
